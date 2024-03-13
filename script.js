@@ -13,10 +13,16 @@ button.addEventListener('click',function(e){
         alert("Entered all fields");
     }
     else{
-       
+       let Mdate=new Date();
+    //    console.log(Mdate);
+       let a=Mdate.getDate();
+       let b=Mdate.getDay();
+       let c=Mdate.getFullYear();
+       console.log(a,b,c);
     let player={
         name:`${fname.value} ${lname.value}`,
         country:country.value,
+        date:`${a}-${b}-${c}`,
         score:score.value
     }
     playerList.push(player);
@@ -90,7 +96,8 @@ function updatedata(){
     inc.style.padding="5px 20px";
     dec.style.padding="5px 20px";
     container.appendChild(main);
-    div1.innerText=item.name;
+    let name=item.name,date=item.date;
+    div1.innerText=`${name} \n ${date}`;
     div2.innerText=item.country;
     div3.innerText=item.score;
     
